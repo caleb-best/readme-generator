@@ -1,14 +1,27 @@
 {
-  "name": "static-site",
+  "name": "readme-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "readme generator to automate a markdown file",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Caleb Best",
+  "license": "MIT",
   "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+    "inquirer": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caleb-best/readme-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator",
+    "readme-generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/caleb-best/readme-generator/issues"
+  },
+  "homepage": "https://github.com/caleb-best/readme-generator#readme"
 }
