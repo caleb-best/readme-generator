@@ -36,7 +36,7 @@ const questions = [
         name: 'runApp',
     },
     {
-        type: 'list',
+        type: 'choices',
         message: 'What kind of license does your project need?',
         options: ['MIT','APACHE 2.0','GPL 3.0', 'BSD 3', 'Other'],
         name: 'license',
@@ -77,14 +77,24 @@ function writeToFile(fileName, data) {
     ${data.username}
     ${data.email}
 
-    
     `
+    const path = './generated/' + fileName;
+
+    fs.writeFile(path, readMeTemp, (err) => 
+    err ? console.error(err) : console.log('Generating Readme...'))
+
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then
+    
+    .then((response) => {
+        const filename = `${response.projectid}.md`
+        writeToFile(filename, response)
+    })
+
+    .catch((err) => console.error(err))
     
 }
 
