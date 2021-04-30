@@ -36,9 +36,9 @@ const questions = [
         name: 'runApp',
     },
     {
-        type: 'choices',
+        type: 'rawlist',
         message: 'What kind of license does your project need?',
-        options: ['MIT','APACHE 2.0','GPL 3.0', 'BSD 3', 'Other'],
+        choices: ['MIT','APACHE 2.0','GPL 3.0', 'BSD 3', 'Other'],
         name: 'license',
     },
     {
@@ -51,32 +51,29 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-    const readMeTemp = `
-    # ${data.projectid} #
+    const readMeTemp = `# ${data.projectid} #
+# Table of contents #
+* [Introduction](#Introduction)
+* [Technologies](#Technologies)
+* [Deploy](#Deploy Application)
+* [Collaborators](#Collaborators)
+* [Contact](#Contact)
     
-    # Table of contents #
-    * [Introduction](#Introduction)
-    * [Technologies](#Technologies)
-    * [Deploy](#Deploy Application)
-    * [Collaborators](#Collaborators)
-    * [Contact](#Contact)
-    
-    ## Introduction ##
-    ${data.descpription}
+## Introduction ##
+${data.descpription}
 
-    ## Technologies ##
-    ${data.technologies}
+## Technologies ##
+${data.technologies}
 
-    ## Deploy Application ##
-    ${data.runApp}
+## Deploy Application ##
+${data.runApp}
 
-    ## Collaborators ##
-    ${data.collaborators}
+## Collaborators ##
+${data.collaborators}
 
-    ## Contact ##
-    ${data.username}
-    ${data.email}
-
+## Contact ##
+${data.username}
+${data.email}
     `
     const path = './generated/' + fileName;
 
@@ -90,7 +87,7 @@ function init() {
     inquirer.prompt(questions)
     
     .then((response) => {
-        const filename = `${response.projectid}.md`
+        const filename = `README.md`
         writeToFile(filename, response)
     })
 
