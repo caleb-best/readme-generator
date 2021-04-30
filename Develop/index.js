@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs')
 
 // TODO: Create an array of questions for user input
+
 const questions = [
     {
         type: 'input',
@@ -16,13 +17,23 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is your projects name?',
+        message: 'What is the name of your project?',
         name: 'projectid',
     },
     {
         type: 'input',
         message: 'Please provide a short description of your project...',
         name: 'decription',
+    },
+    {
+        type: 'input',
+        message: 'What technologies were used on this project?',
+        name: 'technologies',
+    },
+    {
+        type: 'input',
+        message: 'How do you run the application?',
+        name: 'runApp',
     },
     {
         type: 'list',
@@ -38,10 +49,44 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+    const readMeTemp = `
+    # ${data.projectid} #
+    
+    # Table of contents #
+    * [Introduction](#Introduction)
+    * [Technologies](#Technologies)
+    * [Deploy](#Deploy Application)
+    * [Collaborators](#Collaborators)
+    * [Contact](#Contact)
+    
+    ## Introduction ##
+    ${data.descpription}
+
+    ## Technologies ##
+    ${data.technologies}
+
+    ## Deploy Application ##
+    ${data.runApp}
+
+    ## Collaborators ##
+    ${data.collaborators}
+
+    ## Contact ##
+    ${data.username}
+    ${data.email}
+
+    
+    `
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then
+    
+}
 
 // Function call to initialize app
 init();
