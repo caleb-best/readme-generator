@@ -1,5 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown')
 const fs = require('fs')
 
 // TODO: Create an array of questions for user input
@@ -48,37 +49,13 @@ const questions = [
     }
 ];
 
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
-    const readMeTemp = `# ${data.projectid} #
-# Table of contents #
-* [Introduction](#Introduction)
-* [Technologies](#Technologies)
-* [Deploy](#Deploy Application)
-* [Collaborators](#Collaborators)
-* [Contact](#Contact)
     
-## Introduction ##
-${data.descpription}
+const path = './generated/' + fileName;
 
-## Technologies ##
-${data.technologies}
-
-## Deploy Application ##
-${data.runApp}
-
-## Collaborators ##
-${data.collaborators}
-
-## Contact ##
-${data.username}
-${data.email}
-    `
-    const path = './generated/' + fileName;
-
-    fs.writeFile(path, readMeTemp, (err) => 
-    err ? console.error(err) : console.log('Generating Readme...'))
+  fs.writeFileSync(path.join(process.cwd(), fileName), data);
 
 }
 
@@ -86,11 +63,11 @@ ${data.email}
 function init() {
     inquirer.prompt(questions)
     
-    .then((response) => {
-        const filename = `README.md`
-        writeToFile(filename, response)
-    })
+    .then((data) => {
+        console.log('Generating Markdown...')
+        writeToFile('README.md', generateMarkdown({...data}))
 
+    })
     .catch((err) => console.error(err))
     
 }
