@@ -5,7 +5,7 @@ const path = require('path')
 const fs = require('fs')
 
 // TODO: Create an array of questions for user input
-
+//Question Array
 const questions = [
     {
         type: 'input',
