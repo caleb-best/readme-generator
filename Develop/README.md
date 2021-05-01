@@ -1,5 +1,5 @@
-# 1231231231#
-# Table of contents #
+# 123123#
+## Table of contents #
 * [Introduction](#Introduction)
 * [Technologies](#Technologies)
 * [Deploy](#Deploy_Application)
@@ -7,20 +7,20 @@
 * [Contact](#Contact)
     
 ## Introduction ##
-3123123132123
+3123123
 
 ## Technologies ##
-21313213
+1231231
 
 ## Deploy Application ##
-123123123
+1231231
 
 ## Collaborators ##
-123123123
+12312
 
 ## Contact ##
-asdfqwe12
+`12121
 
-123123123123
+123123
 
-This project's license is [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
