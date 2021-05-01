@@ -37,12 +37,13 @@ function generateMarkdown(data) {
 
 
 return `# ${data.projectid}#
-## Table of contents #
+## Table of contents ##
 * [Introduction](#Introduction)
 * [Technologies](#Technologies)
 * [Deploy](#Deploy_Application)
 * [Collaborators](#Collaborators)
 * [Contact](#Contact)
+* [License](#License)
     
 ## Introduction ##
 ${data.description}
@@ -54,13 +55,15 @@ ${data.technologies}
 ${data.runApp}
 
 ## Collaborators ##
+Collaborators on this project include:
 ${data.collaborators}
 
 ## Contact ##
-${data.username}
+For further information or if you wish to speak to me please contact me here:
+GitHub: ${data.username}
+Email: ${data.email}
 
-${data.email}
-
+## License ##
 ${data.license}
 `
 }
