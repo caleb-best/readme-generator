@@ -23,7 +23,7 @@ function generateMarkdown(data) {
 # Table of contents #
 * [Introduction](#Introduction)
 * [Technologies](#Technologies)
-* [Deploy](#Deploy)_Application)
+* [Deploy](#Deploy_Application)
 * [Collaborators](#Collaborators)
 * [Contact](#Contact)
     
