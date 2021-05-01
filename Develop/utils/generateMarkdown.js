@@ -19,7 +19,8 @@ function generateMarkdown(data) {
     }
 
 //returns the markdown file with the updated values
-return `# ${data.projectid}#
+return `# ${data.projectid}
+
 ## Table of contents ##
 * [Introduction](#Introduction)
 * [Technologies](#Technologies)
@@ -43,7 +44,9 @@ ${data.collaborators}
 
 ## Contact ##
 For further information or if you wish to speak to me please contact me here:
+
 GitHub: ${data.username}
+
 Email: ${data.email}
 
 ## License ##
